@@ -1,14 +1,14 @@
-def sort_list(list1):
-    if not list1:
+def sort_list(lst):
+    if not lst:
         return []
-    max_num = max(list1)
-    min_num = min(list1)
-    max_index = list1.index(max_num)
-    min_index = list1.index(min_num)
-    list1[max_index],list1[min_index]  = min_num,max_num
-    list1.append(min_num)
-    return list1
+    min_val = min(lst)
+    max_val = max(lst)
 
+    result = [max_val if x == min_val else min_val if x == max_val else x for x in lst]
+
+    result.append(min_val)
+
+    return result
 print(sort_list([]))
 print(sort_list([2, 4, 6, 8]))
 print(sort_list([1]))
